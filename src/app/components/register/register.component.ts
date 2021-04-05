@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
     var newUser = new User((<HTMLInputElement>usrTxt).value,(<HTMLInputElement>passTxt).value);
     
     this.registerUser.CreateUser(newUser);
-    
+
     this.router.navigate(['home']);
   }
 }
