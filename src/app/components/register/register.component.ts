@@ -29,6 +29,6 @@ export class RegisterComponent implements OnInit {
     
     this.registerUser.CreateUser(newUser);
 
-    this.router.navigate(['home']);
+    
   }
 }
