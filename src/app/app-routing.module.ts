@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { QuiensoyComponent } from './components/quiensoy/quiensoy.component';
-import { RegisterComponent } from './components/register/register.component';
+import { RegisterokComponent } from './access/pages/registerok/registerok.component';
+import { HomeComponent } from './general/pages/home/home.component';
+import { QuiensoyComponent } from './general/pages/quiensoy/quiensoy.component';
 
 //path           -  component lo que va levantar
 const routes: Routes = [
-  {path:'', component: HomeComponent},
   {path:'home', component: HomeComponent},
-  {path:'login', component: LoginComponent},
-  {path:'register', component: RegisterComponent},
-  {path:'**', component: QuiensoyComponent}, /* Si la dirección no existe, ne lleva a un componente de error, lo redirigimos a este lugar */
+  {path:'about', component: QuiensoyComponent},
+  {path:'access', loadChildren: () => 
+                  import('./access/access.module').then(m => m.AccessModule) },              
+  {path:'registerok', component: RegisterokComponent},
+  {path:'**', component: QuiensoyComponent},        /* Si no existe la ruta, nos redirecciona a un componente error */ 
+  {path:'', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 @NgModule({

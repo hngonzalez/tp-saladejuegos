@@ -4,9 +4,18 @@
     box-sizing: border-box;
 }
 
+.tarjeta {
+    width: 100%;
+    height: 100vh;
+    background-color: #212529;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     width: 400px;
-    height: 400px;
+    height: 200px;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -17,6 +26,8 @@
     box-shadow:         0px 3px 12px 0px rgba(50, 50, 50, 0.75);
     animation-name: view;
     animation-duration: 3s;
+    align-items: center;
+    justify-content: center;
 }
 
 @keyframes view {
@@ -64,7 +75,7 @@ h1 {
     background-color: transparent;
     outline: 0;
     border-width: 0 0 1px;
-    border-color: #999be1;
+    border-color: #212529;
     font-size: 18px;
 }
 
@@ -73,7 +84,7 @@ h1 {
     margin: auto;
     transition: 0.5s;
     left: 70px;
-    color: #999be1;
+    color: #212529;
     pointer-events: none;
 }
 
@@ -89,7 +100,7 @@ h1 {
 .login .inputBox input:focus {
     border-width: 0 0 2px;
     color: rgb(5, 5, 5);
-    border-color: #999be1;
+    border-color: #212529;
 }
 
 .login .inputBox input:focus ~ label,
@@ -128,7 +139,7 @@ h1 {
     font-weight: bold;
     font-size: 16px;
     margin: 10px;
-    background-image: linear-gradient(to right bottom, #a891da, #a494dc, #a096de, #9d99e0, #999be1);
+    background-color: #FFC107;
 }
 
 .login .btnLogin:hover {

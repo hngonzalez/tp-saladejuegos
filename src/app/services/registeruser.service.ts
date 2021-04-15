@@ -7,43 +7,52 @@ import { User } from "../models/user";
 })
 export class RegisteruserService {
 
-  rutaDeLaColeccion = 'users';
+  private dbPath = 'users';
   referenciaAlaColeccion: AngularFirestoreCollection<any>;
 
   constructor(private db: AngularFirestore) {
-    this.referenciaAlaColeccion = db.collection(this.rutaDeLaColeccion);
+    this.referenciaAlaColeccion = db.collection(this.dbPath);
    }
 
 
   /* =====Methods===== */
   CreateUser(newUser:User){
-    this.referenciaAlaColeccion.add({
-      name: newUser.name,
-      password: newUser.password,
-      pointsCur: 0,
-      pointsGen: 0
-    })
+    //Forma con ...
+    this.referenciaAlaColeccion.add(({...newUser}))
     .then((docRef) => {
         console.log("Document written with ID: ", docRef.id);
     })
     .catch((error) => {
         console.error("Error adding document: ", error);
     });
-  }
 
-
-  getAllUsers()
-  {
-   
-    
-    /*this.referenciaAlaColeccion.get().then((snapshot) => {
-        querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
-        });
+    //Forma sin ...
+    /*this.referenciaAlaColeccion.add(({
+      name: newUser.name,
+      password: newUser.password,
+      pointsCur: 0,
+      pointsGen: 0
+    }))
+    .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
     })
     .catch((error) => {
-        console.log("Error getting documents: ", error);
+        console.error("Error adding document: ", error);
     });*/
+  }
+
+  CreateUserWithID(newUser:User){
+    this.referenciaAlaColeccion.doc(newUser.name).set(({
+      name: newUser.name,
+      password: newUser.password,
+      pointsCur: 0,
+      pointsGen: 0
+    }))
+    .then(() => {
+        console.log("Document written with ID: ", newUser.name);
+    })
+    .catch((error) => {
+        console.error("Error adding document: ", newUser.name);
+    });
   }
 }
