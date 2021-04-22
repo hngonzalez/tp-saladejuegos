@@ -8,8 +8,8 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 export class ImgsMemotestService {
   
   private query!:string;
-  private api_key:string = environment.PIXABAY_API_KEY;
-  private api_url:string = environment.PIXABAY_API_URL;
+  private api_key:string = '21255120-7671723e9c3d75878e3e5a6de'
+  private api_url:string = 'https://pixabay.com/api/?key='
   private URL:string = this.api_url + this.api_key + '&q=';
   private imgList:any[] = new Array<any>();
 
