@@ -41,12 +41,12 @@
     row-gap: 15px;
 }
 
-.app-chat {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 20px;
-    width: 20%;
-    height: 80%;
-    border: 1px solid black;
+app-chat{
+    display: absolute;
+    width: 60%;
+}
+
+
+img {
+    width: 100%;
 }

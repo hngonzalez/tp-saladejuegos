@@ -18,7 +18,7 @@
     background-color: gray;
 }
 
-.containerTaTeTi{
+.containerAhorcado{
     width: 100%;
     height: 100%;
     background-color: wheat;
@@ -27,8 +27,8 @@
     align-items: center;
 }
 
-.tatetiGrid {
-    position: absolute;
+.ahorcadoGrid {
+    position: relative;
     width: 80%;
     height: 80%;
     background-color:ivory;
@@ -41,12 +41,23 @@
     row-gap: 15px;
 }
 
-.app-chat {
+.inputsAhorcado
+{
+    width: 100%;
+    height: 10%;
     position: absolute;
-    right: 0;
     bottom: 0;
-    margin: 20px;
-    width: 20%;
-    height: 80%;
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+app-chat{
+    display: absolute;
+    width: 60%;
+}
+
+
+img {
+    width: 100%;
 }

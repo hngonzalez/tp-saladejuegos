@@ -1,16 +1,17 @@
 <div class="contenedor">
     <div class="row">
         <div class="col-md-8">
-            <div class="containerppt">
-                <div class="pptGrid">
-                    
+            <div class="containerTaTeTi">
+                <div class="tatetiGrid">
+                    <button *ngFor="let imgMemo of imgList"><img src="{{imgMemo.previewURL}}" alt=""></button>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="containerAbout">
-                <app-quiensoy></app-quiensoy>
+                <app-quiensoy ></app-quiensoy>
             </div>
         </div>
     </div>
 </div>
+

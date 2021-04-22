@@ -1,16 +1,29 @@
 <div class="container">
-    <br><br><br>
-    <section class="py-1 text-center container">
-        <div class="row py-lg-4">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h1>Bienvenido!</h1>
-            <p class="lead text-muted">Esta es la sala de juegos desarrollada por Nahuel G.</p>
+  <!--**************************-->  
+  <!-- ======HOME LOGEADO====== -->
+  <!--**************************-->  
+    <div class="homeIn" *ngIf="user">
+      <br><br><br><br>
+      <app-game [gamesAvailable]="gamesAvailables"></app-game>
+    </div>
+    
+  <!--*****************************-->  
+  <!-- ======HOME DESLOGEADO====== -->
+  <!--*****************************-->  
+    <div class="homeOut" *ngIf="!user">
+      <br><br><br>
+      <section class="py-1 text-center container">
+          <div class="row py-lg-4">
+            <div class="col-lg-7 col-md-8 mx-auto">
+              <h1>Bienvenido!</h1>
+              <p class="lead text-muted">Esta es la sala de juegos desarrollada por Nahuel G.</p>
+            </div>
           </div>
-        </div>
-    </section>
-    <div class="row justify-content-md-center">
-        <div class="col-md-auto">
-            <img src="../../../../assets/img/2511555.gif" width="550px">
-        </div>
+      </section>
+      <div class="row justify-content-md-center">
+          <div class="col-md-auto">
+              <img src="../../../../assets/img/2511555.gif" width="550px">
+          </div>
+      </div>
     </div>
 </div>

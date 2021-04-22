@@ -7,21 +7,21 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire'
 import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { HomeComponent } from './general/pages/home/home.component';
-import { QuiensoyComponent } from './general/pages/quiensoy/quiensoy.component';
 import { environment } from 'src/environments/environment';
 import { MenuComponent } from './general/components/menu/menu.component';
-import { FooterComponent } from './general/components/footer/footer.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { GameComponent } from './access/components/game/game.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    QuiensoyComponent,
     MenuComponent,
-    FooterComponent
+    GameComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +29,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

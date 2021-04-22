@@ -11,7 +11,9 @@ export const environment = {
     storageBucket: "tp-saladejuego.appspot.com",
     messagingSenderId: "771750898211",
     appId: "1:771750898211:web:a67fb4ce875c28bd889f96"
-  }
+  },
+  PIXABAY_API_KEY: '21255120-7671723e9c3d75878e3e5a6de',
+  PIXABAY_API_URL: 'https://pixabay.com/api/?key='
 };
 
 /*

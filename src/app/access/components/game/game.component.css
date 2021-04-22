@@ -1,0 +1,10 @@
+.imgsGame {
+    width: 100%;
+    position: relative;
+}
+
+.imgsGame img {
+    position: relative;
+    width: 50%;
+    height: 50%;
+}
