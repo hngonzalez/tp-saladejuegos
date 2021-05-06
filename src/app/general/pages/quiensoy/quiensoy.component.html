@@ -1,4 +1,27 @@
-<strong class="d-inline-block mb-2 text-primary">About me</strong>
-<h3 class="mb-0">Featured post</h3>
-<div class="mb-1 text-muted">Nov 12</div>
-<p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+<div class="contenedor">
+    <div class="col-md-6">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">¿Quién soy?</strong>
+            <h3 class="mb-0">Detalles de la cuenta de {{userData.displayName}}</h3>
+            <br>
+            <p class="card-text mb-auto">Último inicio de sesión: {{userData.lastSignInTime}}</p>
+            <p class="card-text mb-auto">P. acumulados PPT: {{userData.pointsGenPPT}}</p>
+            <p class="card-text mb-auto">Mail verificado: {{userData.mailVerified}}</p>
+            <p class="card-text mb-auto"></p>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+          </div>
+        </div>
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">Juego Propio</strong>
+            <h3 class="mb-0">Ahorcado</h3>
+            <br>
+            <p class="card-text mb-auto">El ahorcado (también llamado colgado) es un juego de adivinanzas de lápiz y papel para dos o más jugadores. Un jugador piensa en una palabra, frase u oración y el otro trata de adivinarla según lo que sugiere por letras o números.
+            </p>
+          </div>
+        </div>
+    </div>
+</div>

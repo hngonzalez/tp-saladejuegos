@@ -2,26 +2,24 @@
     margin: 0;
     font-family: 'Tajawal', sans-serif;
     box-sizing: border-box;
-    
 }
 
 .tarjeta {
     width: 100%;
     height: 100vh;
-    background-color: #212529;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.container {    
+.container {
     width: 400px;
     height: 400px;
     display: flex;
     position: relative;
     flex-direction: column;
     border-radius: 6px;
-    background-color: #ffff;
+    background-color: #F5F3EB;
     -webkit-box-shadow: 0px 3px 12px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    0px 3px 12px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         0px 3px 12px 0px rgba(50, 50, 50, 0.75);
@@ -61,7 +59,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 40px;
     margin: 10px;
 }
 
@@ -128,7 +126,7 @@ h1 {
     font-weight: 12px;
 }
 
-.login .btnLogin {
+.login #btnLogin {
     width: 80%;
     height: 50px;
     border: 0;
@@ -138,10 +136,16 @@ h1 {
     font-weight: bold;
     font-size: 16px;
     margin: 10px;
-    background-color: #FFC107;
+    background-color: #B32442;
 }
 
-.login .btnLogin:hover {
-    cursor: pointer;
-    background-color: #FFCE3C;
+small {
+    width: 100%;
+    bottom: 100px;
+    height: 5%;
+    padding-left: 15%;
+}
+
+.invalid {
+    color: red;
 }

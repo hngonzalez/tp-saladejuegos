@@ -1,0 +1,65 @@
+<div class="contenedor">
+  <form [formGroup]="forma" (ngSubmit)="aceptar()">
+    <div class="row">
+      <div class="col-md-12 mb-5">
+        <h2>Angular Forms</h2>
+      </div>
+    </div>
+    <div class="row formulario">
+      <div class="col-md-6 mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" formControlName="nombre">
+        <small class="invalid" *ngIf="forma.get('nombre')?.errors?.required && forma.get('nombre')?.touched">El nombre es requerido</small>
+        <small class="invalid" *ngIf="forma.get('nombre')?.errors?.contieneEspacios && forma.get('nombre')?.touched">No puede contener espacios</small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input type="text" class="form-control" id="apellido" placeholder="Ingrese apellido" formControlName="apellido">
+        <small class="invalid" *ngIf="forma.get('apellido')?.errors?.required && forma.get('apellido')?.touched">El apellido es requerido</small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="edad" class="form-label">Edad</label>
+        <input type="number" class="form-control" id="edad" placeholder="Ingrese edad" formControlName="edad">
+        <small class="invalid" *ngIf="forma.get('edad')?.errors?.required  && forma.get('edad')?.touched">La edad es requerida</small>
+        <small class="invalid" *ngIf="forma.get('edad')?.errors?.min || forma.get('edad')?.errors?.max  && forma.get('edad')?.touched">La edad debe ser de entre 18 a 99 años</small>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="edad" class="form-label">Telefono</label>
+        <input type="text" class="form-control" id="telefono" placeholder="Ingrese su telefono" formControlName="telefono">
+        <small class="invalid" *ngIf="forma.get('telefono')?.errors?.required  && forma.get('telefono')?.touched">El telefono es requerido</small>
+        <small class="invalid" *ngIf="forma.get('telefono')?.errors?.nonumerico && forma.get('telefono')?.touched">El campo telefono solo admite numeros</small>
+        <small class="invalid" *ngIf="forma.get('telefono')?.errors?.mayor && forma.get('telefono')?.touched">El campo telefono solo admite un máximo de 10 números</small>
+        
+      </div>
+      <div class="col-md-6 mb-3">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Sexo</label>
+          <select class="form-control" id="sexo" formControlName="sexo">
+            <option value="">Seleccione uno</option>
+            <option value="F">Femenino</option>
+            <option value="M">Masculino</option>
+          </select>
+        </div>
+        <small class="invalid" *ngIf="forma.get('sexo')?.errors?.required && forma.get('sexo')?.touched">El sexo es requerido</small>
+      </div>
+
+      
+      
+    </div>
+    <div class="row">
+      <div class="col-md-12 mb-5">
+        <div class="form-check">
+          <!--input type="checkbox" class="form-check-input" id="terminos" formControlName="terminos">
+          <label for="recordar" class="form-check-label" for="terminos">
+            Aceptar términos y condiciones
+          </label-->
+        </div>
+      </div>
+      <div class="col-md-12 d-grid gap-2">
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="forma.invalid">
+          Aceptar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

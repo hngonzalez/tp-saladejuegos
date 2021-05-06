@@ -13,6 +13,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { GameComponent } from './access/components/game/game.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EncuestaComponent } from './access/components/encuesta/encuesta.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     HomeComponent,
     MenuComponent,
-    GameComponent
+    GameComponent,
+    EncuestaComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

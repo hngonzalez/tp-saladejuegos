@@ -1,16 +1,30 @@
 <div class="contenedor">
     <div class="row">
         <div class="col-md-8">
-            <div class="containerppt">
-                <div class="pptGrid">
-                    
+            <div class="containerPPT">
+                <div class="opcionesPCPPT">
+                    <div class="eleccionPC">
+                        <label *ngIf="!opPC">
+                            <h3>Empiece seleccionando una opción!</h3>
+                        </label>
+                        <img *ngIf="opPC" src="../../../../../../assets/img/ppt/{{opPC}}.png" alt="">
+                    </div>
                 </div>
+                <div class="opcionesJugadorPPT">
+                    <button *ngFor="let opt of opciones" (click)="SeleccionJugador(opt)" [disabled]="gano"><img src="../../../../../../assets/img/ppt/{{opt}}.png" alt=""></button>
+                </div>
+                <div>Puntaje: {{puntaje}}</div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="containerAbout">
-                <app-quiensoy></app-quiensoy>
+                <label *ngIf="gano">
+                    <h4>Ganaste!</h4>
+                    <button id="nPartida" (click)="NuevaPartida()">Nueva partida</button>
+                </label>
+                <!--app-quiensoy></app-quiensoy-->
             </div>
         </div>
     </div>
 </div>
+

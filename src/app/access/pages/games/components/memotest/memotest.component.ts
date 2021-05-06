@@ -12,7 +12,7 @@ export class MemotestComponent implements OnInit {
 
   constructor(private imgService:ImgsMemotestService) {
     this.imgList = this.imgService.searchImg('animales');
-    console.log(this.imgList);
+    //console.log(this.imgList);
    }
 
   ngOnInit(): void {

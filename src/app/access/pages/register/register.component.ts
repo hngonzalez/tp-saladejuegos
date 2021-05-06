@@ -49,14 +49,15 @@ export class RegisterComponent implements OnInit {
     this.afAuth.createUserWithEmailAndPassword(newUser.name,newUser.password)
       .then( userCredential => {
         this.nUser = newUser;
-        console.log(userCredential);
-        userCredential.user?.updateProfile({
+        //console.log(userCredential);
+        /*userCredential.user?.updateProfile({
           displayName: 'a'
-        });
-
+        });*/
+  
         this.InsertDataFireAuth(userCredential)
           .then(()=> {
-            console.log('cambio pag');
+            //console.log('cambio pag');
+            this.InsertoEncuesta(userCredential);
             this.router.navigate(['registerok']);
           })
       })
@@ -70,6 +71,16 @@ export class RegisterComponent implements OnInit {
       /*email: this.nUser.name,
       password: this.nUser.password*/
       ...nusr
+    });
+  }
+
+  InsertoEncuesta(userCredential: firebase.auth.UserCredential) {
+    this.db.doc(`users/${userCredential.user?.uid}`).collection('encuesta').doc('DatosEncuesta').set({
+      apellido: '',
+      nombre: '',
+      edad: '',
+      sexo: '',
+      telefono: '',
     });
   }
 }

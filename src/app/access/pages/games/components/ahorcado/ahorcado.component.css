@@ -28,28 +28,26 @@
 }
 
 .ahorcadoGrid {
-    position: relative;
     width: 80%;
     height: 80%;
     background-color:ivory;
-    display: grid;
-    grid-template-columns: 20% 20% 20%;
-    grid-template-rows: 20% 20% 20%; 
+    display: flex;
+    flex-direction: column;
+}
+
+.display {
+    width: 100%;
+    height: 100%;
+    background-color: cadetblue;
+    display: flex;
     justify-content: center;
-    align-content: center;
-    column-gap: 10px;
-    row-gap: 15px;
+    align-items: center;
 }
 
 .inputsAhorcado
 {
-    width: 100%;
-    height: 10%;
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    height: 100%;
+    background-color: chocolate;
 }
 
 app-chat{
@@ -57,7 +55,3 @@ app-chat{
     width: 60%;
 }
 
-
-img {
-    width: 100%;
-}

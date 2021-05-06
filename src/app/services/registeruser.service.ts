@@ -46,7 +46,8 @@ export class RegisteruserService {
       name: newUser.name,
       password: newUser.password,
       pointsCur: 0,
-      pointsGen: 0
+      pointsGen: 0,
+      pointsGenPPT: 0
     }))
     .then(() => {
         console.log("Document written with ID: ", newUser.name);

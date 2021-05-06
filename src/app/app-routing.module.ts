@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'access', loadChildren: () => 
                   import('./access/access.module').then(m => m.AccessModule) },              
   {path:'registerok', component: RegisterokComponent},
-  {path:'**', component: QuiensoyComponent},        /* Si no existe la ruta, nos redirecciona a un componente error */ 
+  {path:'**', component: HomeComponent},        /* Si no existe la ruta, nos redirecciona a un componente error */ 
   {path:'', redirectTo: 'home', pathMatch: 'full'}
 ];
 

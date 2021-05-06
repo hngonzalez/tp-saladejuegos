@@ -2,10 +2,14 @@
   <!--**************************-->  
   <!-- ======HOME LOGEADO====== -->
   <!--**************************-->  
-    <div class="homeIn" *ngIf="user">
-      <br><br><br><br>
-      <app-game [gamesAvailable]="gamesAvailables"></app-game>
-    </div>
+  <div class="homeIn" *ngIf="user && !veEncuesta">
+    <app-encuesta></app-encuesta>
+    {{veEncuesta}}
+  </div>
+  <div class="homeIn" *ngIf="user && veEncuesta">
+    <br><br><br><br>
+    <app-game [gamesAvailable]="gamesAvailables"></app-game>
+  </div>
     
   <!--*****************************-->  
   <!-- ======HOME DESLOGEADO====== -->

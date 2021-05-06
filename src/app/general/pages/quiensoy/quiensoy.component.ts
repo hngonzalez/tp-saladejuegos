@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuiensoyComponent implements OnInit {
 
-  constructor() { }
+  userData!:any;
+
+  constructor() { 
+    this.userData = localStorage;
+  }
 
   ngOnInit(): void {
   }
+
 
 }

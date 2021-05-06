@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegisteruserService } from "../../../services/registeruser.service";
 import { AuthService } from "../../../services/auth.service";
 import { User } from "../../../models/user";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -11,14 +12,19 @@ import { User } from "../../../models/user";
 export class LoginComponent implements OnInit {
 
   user:any;
+  public forma!:FormGroup;
 
   constructor(private registerUser:RegisteruserService,
-              private loginUser:AuthService) {
+              private loginUser:AuthService,
+              private fb:FormBuilder) {
 
    }
 
   ngOnInit(): void {
-    
+    this.forma = this.fb.group({
+      'email': ['', Validators.required],
+      'password': ['', Validators.required]
+    })
   }
 
   Login(){
