@@ -43,5 +43,13 @@ export class LoginComponent implements OnInit {
 
     this.loginUser.login(nUser.name, nUser.password);
   }
+  
+  LoginAuth2(){
+    var usrTxt = 'naikido.gz@hotmail.com';
+    var passTxt = '123456';
+    var nUser = new User(usrTxt,passTxt);
+
+    this.loginUser.login(nUser.name, nUser.password);
+  }
 }
 
