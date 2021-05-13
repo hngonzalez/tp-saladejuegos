@@ -2,7 +2,7 @@
   <!--**************************-->  
   <!-- ======HOME LOGEADO====== -->
   <!--**************************-->  
-  <div class="homeIn" *ngIf="user && !veEncuesta">
+  <!--div class="homeIn" *ngIf="user && !veEncuesta">
     <app-encuesta></app-encuesta>
     {{veEncuesta}}
   </div>
@@ -14,7 +14,7 @@
   <!--*****************************-->  
   <!-- ======HOME DESLOGEADO====== -->
   <!--*****************************-->  
-    <div class="homeOut" *ngIf="!user">
+    <div class="homeOut">
       <br><br><br>
       <section class="py-1 text-center container">
           <div class="row py-lg-4">

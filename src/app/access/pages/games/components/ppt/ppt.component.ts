@@ -91,7 +91,7 @@ export class PptComponent implements OnInit {
     var idDoc = String(localStorage.getItem('idDoc'));
     var docRef = this.regis.referenciaAlaColeccion.doc(idDoc);
     docRef.get().subscribe( usersData => { 
-      localStorage.setItem('pointsGenPPT',<string>usersData.data().pointsGen);
+      //localStorage.setItem('pointsGenPPT',<string>usersData.data().pointsGen);
     });
         
     docRef.update({

@@ -18,7 +18,7 @@ export class MenuComponent implements OnInit {
     this.auth.getUserState()
     .subscribe( user => {
       this.user = user;
-      console.log(user);
+      //console.log(user);
     })
   }
 

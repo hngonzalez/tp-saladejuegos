@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ImgsMemotestService } from "../../../../../services/imgs-memotest.service";
 
 @Component({
   selector: 'app-memotest',
@@ -7,13 +6,8 @@ import { ImgsMemotestService } from "../../../../../services/imgs-memotest.servi
   styleUrls: ['./memotest.component.css']
 })
 export class MemotestComponent implements OnInit {
-  imgList:any[] = new Array<any>();
 
-
-  constructor(private imgService:ImgsMemotestService) {
-    this.imgList = this.imgService.searchImg('animales');
-    //console.log(this.imgList);
-   }
+  constructor() { }
 
   ngOnInit(): void {
   }

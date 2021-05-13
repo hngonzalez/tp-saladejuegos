@@ -20,10 +20,10 @@ export class RegisteruserService {
     //Forma con ...
     this.referenciaAlaColeccion.add(({...newUser}))
     .then((docRef) => {
-        console.log("Document written with ID: ", docRef.id);
+        //console.log("Document written with ID: ", docRef.id);
     })
     .catch((error) => {
-        console.error("Error adding document: ", error);
+        //console.error("Error adding document: ", error);
     });
 
     //Forma sin ...
@@ -49,7 +49,8 @@ export class RegisteruserService {
       pointsGen: 0,
       pointsGenPPT: 0
     }))
-    .then(() => {
+    .then((dofref) => {
+      //console.log(dofref);
         console.log("Document written with ID: ", newUser.name);
     })
     .catch((error) => {

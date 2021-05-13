@@ -16,6 +16,8 @@ export class AuthService {
   private eventAuthError = new BehaviorSubject<string>("");
   eventAuthError$ = this.eventAuthError.asObservable();
   newUser: any;
+  uCred!:firebase.auth.UserCredential;
+  uIdDoc!:string;
 
   constructor(private afAuth: AngularFireAuth,
               private db: AngularFirestore,
@@ -29,12 +31,14 @@ export class AuthService {
   login( email: string, password: string) {
     this.afAuth.signInWithEmailAndPassword(email, password)
       .catch(error => {
-        this.eventAuthError.next(error);
+        console.log("asdasdasd");
+        this.router.navigate(['loginerror']);
       })
       .then(userCredential => {
         if(userCredential) {
           var idDoc = userCredential.user?.uid;
-          
+          this.uIdDoc = String(idDoc);
+          this.uCred = userCredential;
           this.setLocalStorage(userCredential, String(idDoc));
 
           this.router.navigate(['/home']);
@@ -85,7 +89,7 @@ export class AuthService {
   setLocalStorage(userCredential:firebase.auth.UserCredential, idDoc:string){
     var docRef = this.regis.referenciaAlaColeccion.doc(idDoc);
     docRef.get().subscribe( usersData => { 
-
+      console.log(userCredential.user);
       /* Seteo el localStorage */
       localStorage.setItem('idDoc', idDoc);
       localStorage.setItem('displayName', usersData.data().name);
@@ -93,12 +97,33 @@ export class AuthService {
       localStorage.setItem('mailVerified', String(userCredential.user?.emailVerified));
       localStorage.setItem('lastSignInTime', String(userCredential.user?.metadata.lastSignInTime));
       localStorage.setItem('pointsGenPPT', String(usersData.data().pointsGenPPT));
+      localStorage.setItem('pointsGenAHO', String(usersData.data().pointsGenAHO));
+      localStorage.setItem('pointsGenMEMO', String(usersData.data().pointsGenMEMO));
       localStorage.setItem('pointsGenTTT', String(usersData.data().pointsGenTTT));
       localStorage.setItem('encuesta', usersData.data().encuesta);      
       
       console.log(localStorage)
       //console.log(usersData.data());
-      
     });    
   }
+
+  getUpdatedData(){
+    var docRef = this.regis.referenciaAlaColeccion.doc(this.uIdDoc);
+
+    docRef.get().subscribe( usersData => { 
+      console.log(localStorage);
+      /* Seteo el localStorage */
+      localStorage.setItem('photoURL', String(this.uCred.user?.photoURL));
+      localStorage.setItem('mailVerified', String(this.uCred.user?.emailVerified));
+      localStorage.setItem('lastSignInTime', String(this.uCred.user?.metadata.lastSignInTime));
+      localStorage.setItem('pointsGenPPT', String(usersData.data().pointsGenPPT));
+      localStorage.setItem('pointsGenAHO', String(usersData.data().pointsGenAHO));
+      localStorage.setItem('pointsGenMEMO', String(usersData.data().pointsGenMEMO));
+      localStorage.setItem('pointsGenTTT', String(usersData.data().pointsGenTTT));
+      localStorage.setItem('encuesta', usersData.data().encuesta);      
+    });    
+  }
+
+
+
 }

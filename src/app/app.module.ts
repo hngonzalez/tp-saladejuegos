@@ -11,19 +11,16 @@ import { environment } from 'src/environments/environment';
 import { MenuComponent } from './general/components/menu/menu.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { GameComponent } from './access/components/game/game.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EncuestaComponent } from './access/components/encuesta/encuesta.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
-
+import { MensajesFirestoreService } from './services/mensajes-firestore-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MenuComponent,
-    GameComponent,
     EncuestaComponent
   ],
   imports: [
@@ -36,7 +33,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    MensajesFirestoreService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

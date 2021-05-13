@@ -7,6 +7,9 @@
                         <label *ngIf="!opPC">
                             <h3>Empiece seleccionando una opción!</h3>
                         </label>
+                        <label *ngIf="opPC">
+                            <h3>PC elegió: </h3>
+                        </label>
                         <img *ngIf="opPC" src="../../../../../../assets/img/ppt/{{opPC}}.png" alt="">
                     </div>
                 </div>

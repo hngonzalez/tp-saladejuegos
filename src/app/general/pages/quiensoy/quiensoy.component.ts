@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-quiensoy',
@@ -9,8 +10,10 @@ export class QuiensoyComponent implements OnInit {
 
   userData!:any;
 
-  constructor() { 
+  constructor(private auth:AuthService) { 
+    auth.getUpdatedData();
     this.userData = localStorage;
+    
   }
 
   ngOnInit(): void {
